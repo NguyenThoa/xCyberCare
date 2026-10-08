@@ -1,6 +1,6 @@
 # SETUP CLAUDE — Hướng Dẫn Cài Đặt MCP, Connectors & Cowork Schedule
 
-> **Đối tượng:** Tester dùng bộ Kit `claude-testing-skills` của **Anh Tester**.
+> **Đối tượng:** Tester dùng bộ Kit `claude-testing-skills` của **CyberTech**.
 > **Mục tiêu:** Cài đủ 3 mảng — **Playwright MCP** (điều khiển browser thật), **Connectors** (Atlassian / Slack / GitHub / Claude in Chrome), và **Cowork Schedule** (tự động chạy task theo lịch).
 
 > ⚠️ **Lưu ý về giao diện:** Claude cập nhật UI khá thường xuyên. Tên menu trong tài liệu này đúng tại thời điểm viết; nếu máy bạn hiển thị khác, hãy tìm **mục tương đương** (ví dụ `Developer` ≈ `Developers` ≈ `Advanced`). Phần sửa file JSON và lệnh CLI thì **ổn định hơn** — nếu UI khác quá, dùng cách đó.
@@ -769,5 +769,5 @@ Khi đã tin tưởng output, mở khoá gửi tự động. Ba nguyên tắc b�
 
 ---
 
-Anh Tester Automation Testing 🎯
+CyberTech Automation Testing 🎯
 https://anhtester.com

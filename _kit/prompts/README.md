@@ -58,4 +58,4 @@
 
 ## Nguồn
 
-`claude-testing-skills-main.zip` (Anh Tester kit v2, 2026-09).
+`claude-testing-skills-main.zip` (CyberTech kit v2, 2026-09).

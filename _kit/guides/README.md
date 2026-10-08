@@ -1,6 +1,6 @@
 # Kit Guides — Reference từ Claude Testing Kit v2
 
-3 file guide gốc từ bộ `claude-testing-skills-main.zip` (Anh Tester kit, phiên bản mới). Copy vào đây để tham chiếu workflow chuẩn, **KHÔNG override** các convention riêng của xCyberCare.
+3 file guide gốc từ bộ `claude-testing-skills-main.zip` (CyberTech kit, phiên bản mới). Copy vào đây để tham chiếu workflow chuẩn, **KHÔNG override** các convention riêng của xCyberCare.
 
 ## Files
 
@@ -23,4 +23,4 @@
 
 ## Nguồn gốc
 
-Zip: `claude-testing-skills-main.zip` (Anh Tester, 2026-09).
+Zip: `claude-testing-skills-main.zip` (CyberTech, 2026-09).

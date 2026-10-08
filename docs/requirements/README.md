@@ -8,16 +8,16 @@
 | Thuộc tính | Giá trị |
 |---|---|
 | Hệ thống | xCare — thủ tục Bảo hiểm xã hội · Jira project `CARE3` · Confluence space `CARE3` |
-| Prefix TC ID | ❔ Chưa chốt — xác nhận với user trước lần sinh test case đầu tiên |
-| Môi trường dùng chung? | ❔ Chưa hỏi |
-| Năng lực kiểm thử của QA (gọi API · truy vấn CSDL · xem nhật ký) | ❔ Chưa hỏi |
+| Prefix TC ID | ✅ `CARE3_<MODULE>_TC_<3 số>` — VD `CARE3_TT607_TC_001` (người dùng chốt 09-10). Dùng cố định cho mọi module, KHÔNG đổi giữa chừng |
+| Môi trường dùng chung? | ✅ **Có** — môi trường `dev` dùng chung nhưng **được phép Ký và gửi** (Chat 09-10). Bật quy tắc: chỉ dùng dữ liệu do QA tạo (tên truy vết được), dọn dữ liệu test sau khi chạy, không thao tác phá huỷ trên dữ liệu người khác |
+| Năng lực kiểm thử của QA (gọi API · truy vấn CSDL · xem nhật ký) | ✅ "có quyền" gọi API / truy vấn CSDL (Chat 09-10) · ❔ chi tiết (CSDL loại gì, chỉ đọc hay ghi, xem nhật ký hoạt động) chưa hỏi |
 | URL · tài khoản test | Lưu trong `.env` (đã `.gitignore`) — **không** ghi vào `docs/` |
 
 ## 1. Bảng danh mục module
 
 | Module | Prefix | Nền tảng | Trạng thái recon | Mức phủ tài liệu | Tài liệu | REQ đã dùng | Mã kế tiếp | AMB treo | Story | Cập nhật |
 |---|---|---|---|---|---|---|---|---|---|---|
-| thu-tuc-607 | `TT607` | Web ⬜ | ⬜ Chưa khảo sát UI | Có đặc tả Confluence 143492085 (bản 14) | [analysis/analysis_CARE3-2755.md](thu-tuc-607/analysis/analysis_CARE3-2755.md) | REQ-TT607-01 → 86 (ticket CARE3-2755) | REQ-TT607-87 · AMB-TT607-43 · RISK-TT607-10 | 31 (🔴 11) | — | 06-10-2026 |
+| thu-tuc-607 | `TT607` | Web ⬜ | ⬜ Chưa khảo sát UI | Có đặc tả Confluence 143492085 (bản 14) | [analysis/analysis_CARE3-2755.md](thu-tuc-607/analysis/analysis_CARE3-2755.md) | REQ-TT607-01 → 106 (ticket CARE3-2755) | REQ-TT607-107 · AMB-TT607-43 · RISK-TT607-10 | 20 (🔴 10) | — | 09-10-2026 |
 
 **Prefix đã chiếm:** `TT607` · `SYS` (dành riêng cho AMB/RISK cấp hệ thống)
 
@@ -25,13 +25,13 @@
 
 | Module | Tổng REQ | Ghi chú |
 |---|---|---|
-| thu-tuc-607 | 86 | Sinh từ phân tích ticket, chưa kiểm chứng trên UI |
+| thu-tuc-607 | 106 | Sinh từ phân tích ticket + câu trả lời AMB (08 → 09-10), chưa kiểm chứng trên UI |
 
 ## 3. Ambiguity 🔴 High còn treo
 
 | Module | Mã |
 |---|---|
-| thu-tuc-607 | AMB-TT607-13 · 17 · 19 · 20 · 32 · 33 · 34 · 35 · 36 · 37 · 42 |
+| thu-tuc-607 | AMB-TT607-13 · 17 · 19 · 20 · 32 · 34 · 35 · 36 · 37 · 42 (câu hỏi lượt 2: B-1 → B-21) |
 
 ## 4. Cấu trúc thư mục chuẩn
 
@@ -59,3 +59,6 @@ docs/requirements/
 | Ngày | Thay đổi |
 |---|---|
 | 06-10-2026 | Khởi tạo danh mục. Thêm module `thu-tuc-607` (prefix `TT607`) từ ticket CARE3-2755 |
+| 09-10-2026 | `thu-tuc-607`: thêm REQ-TT607-87 → 106 từ câu trả lời AMB; AMB treo 31 → 20 (🔴 11 → 10, đóng AMB-TT607-33) |
+| 09-10-2026 | Thuộc tính dự án: môi trường `dev` dùng chung nhưng được Ký và gửi · QA có quyền gọi API / truy vấn CSDL |
+| 09-10-2026 | Chốt prefix TC ID `CARE3_<MODULE>_TC_<3 số>` (VD `CARE3_TT607_TC_001`) |

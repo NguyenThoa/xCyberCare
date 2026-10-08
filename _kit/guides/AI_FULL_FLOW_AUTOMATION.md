@@ -77,7 +77,7 @@
 /generate-automation-framework
 ```
 
-📋 Prompt mẫu: [`prompt_03_create_framework_playwright.txt`](prompts/prompt_03_create_framework_playwright.txt) · [`selenium`](prompts/prompt_03_create_framework_selenium.txt) · [`appium`](prompts/prompt_03_create_framework_appium.txt)
+📋 Prompt mẫu: [`prompt_03_create_framework_playwright.txt`](../prompts/prompt_03_create_framework_playwright.txt) · [`selenium`](../prompts/prompt_03_create_framework_selenium.txt) · [`appium`](../prompts/prompt_03_create_framework_appium.txt)
 
 **⏸️ Checkpoint** — AI hỏi và **chờ xác nhận** trước khi scaffold: platform (Web/Mobile/API) · framework · ngôn ngữ · reporting. Đây là chỗ duy nhất trong flow được chọn stack; chốt sai thì chặng 1 trở đi phải làm lại từ đầu.
 
@@ -100,7 +100,7 @@
 - [ ] `.gitignore` đã chặn `reports/` và `.allure/`
 - [ ] Locator placeholder (nếu chưa có URL) đã đánh `⚠️ PLACEHOLDER` **và** liệt kê trong README
 
-> Chi tiết chuẩn report: [`.claude/rules/reporting_rules.md`](.claude/rules/reporting_rules.md).
+> Chi tiết chuẩn report: [`.claude/rules/reporting_rules.md`](../../.claude/rules/reporting_rules.md).
 
 ---
 
@@ -110,15 +110,15 @@
 
 | Có gì trong tay | Command | Prompt mẫu | Chạy trên |
 |---|---|---|---|
-| **File TC, nền tảng nào cũng được** (đường chính) | `/generate-automation-from-testcases` — bộ định tuyến, mode WEB (mặc định) / MOBILE / API | [`prompt_05`](prompts/prompt_05_convert_manual_to_automation.txt) | Tự nhận từ đường dẫn file TC |
-| File TC **web** | `/generate-automation-web` mode TC | [`prompt_04 PW`](prompts/prompt_04_generate_script_playwright.txt) · [`prompt_04 SE`](prompts/prompt_04_generate_script_selenium.txt) | Playwright MCP |
-| File TC **mobile** | `/generate-automation-mobile` mode TC | [`prompt_26`](prompts/prompt_26_generate_automation_mobile_flow.txt) | Appium MCP — Native Android/iOS, **Flutter**, Hybrid |
-| File TC **API** | `/generate-automation-api` | [`prompt_31`](prompts/prompt_31_generate_automation_api.txt) | REST Assured / Playwright API / Pytest / Supertest |
+| **File TC, nền tảng nào cũng được** (đường chính) | `/generate-automation-from-testcases` — bộ định tuyến, mode WEB (mặc định) / MOBILE / API | [`prompt_05`](../prompts/prompt_05_convert_manual_to_automation.txt) | Tự nhận từ đường dẫn file TC |
+| File TC **web** | `/generate-automation-web` mode TC | [`prompt_04 PW`](../prompts/prompt_04_generate_script_playwright.txt) · [`prompt_04 SE`](../prompts/prompt_04_generate_script_selenium.txt) | Playwright MCP |
+| File TC **mobile** | `/generate-automation-mobile` mode TC | [`prompt_26`](../prompts/prompt_26_generate_automation_mobile_flow.txt) | Appium MCP — Native Android/iOS, **Flutter**, Hybrid |
+| File TC **API** | `/generate-automation-api` | [`prompt_31`](../prompts/prompt_31_generate_automation_api.txt) | REST Assured / Playwright API / Pytest / Supertest |
 | **Chưa có TC** — web | `/generate-automation-web` mode FLOW | — | Mô tả thao tác bằng lời hoặc chỉ URL |
-| **Chưa có TC** — app | `/generate-automation-mobile` mode FLOW | [`prompt_26`](prompts/prompt_26_generate_automation_mobile_flow.txt) | App (`.apk`/`.ipa`) + flow mô tả |
-| **Chưa có TC** — API | Sinh TC trước: `/generate-testcases-api` | [`prompt_09`](prompts/prompt_09_generate_api_tests.txt) | Rồi quay lại dòng *File TC API* |
+| **Chưa có TC** — app | `/generate-automation-mobile` mode FLOW | [`prompt_26`](../prompts/prompt_26_generate_automation_mobile_flow.txt) | App (`.apk`/`.ipa`) + flow mô tả |
+| **Chưa có TC** — API | Sinh TC trước: `/generate-testcases-api` | [`prompt_09`](../prompts/prompt_09_generate_api_tests.txt) | Rồi quay lại dòng *File TC API* |
 
-> 📱 **App Flutter:** việc đầu tiên là nhận diện app đã bật **semantics** chưa — chưa bật thì hierarchy chỉ có một node `FlutterView` rỗng và **không có element nào để tìm**. Đây là thoả thuận với dev, không phải việc QA xoay được bằng locator giỏi. Xem [`appium_rules.md`](.claude/rules/appium_rules.md) mục 3.
+> 📱 **App Flutter:** việc đầu tiên là nhận diện app đã bật **semantics** chưa — chưa bật thì hierarchy chỉ có một node `FlutterView` rỗng và **không có element nào để tìm**. Đây là thoả thuận với dev, không phải việc QA xoay được bằng locator giỏi. Xem [`appium_rules.md`](../../.claude/rules/appium_rules.md) mục 3.
 
 **AI làm gì:**
 
@@ -151,8 +151,8 @@ task.md                           ← checklist tiến độ + bảng kết qu�
 | Cần gì | Command | Prompt mẫu |
 |---|---|---|
 | Locator cho 1 element cụ thể | `/generate-locator` | — |
-| Bộ test data nhiều biến thể | `/generate-test-data` | [`prompt_07`](prompts/prompt_07_generate_test_data.txt) |
-| Test UI độc lập backend, tái hiện lỗi 500/timeout/data rỗng | `/generate-api-mocks` | [`prompt_14`](prompts/prompt_14_generate_api_mocks.txt) |
+| Bộ test data nhiều biến thể | `/generate-test-data` | [`prompt_07`](../prompts/prompt_07_generate_test_data.txt) |
+| Test UI độc lập backend, tái hiện lỗi 500/timeout/data rỗng | `/generate-api-mocks` | [`prompt_14`](../prompts/prompt_14_generate_api_mocks.txt) |
 
 ---
 
@@ -162,7 +162,7 @@ task.md                           ← checklist tiến độ + bảng kết qu�
 /review-automation-code
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_06_review_automation_code.txt`](prompts/prompt_06_review_automation_code.txt)
+📋 Prompt mẫu: [`prompts/prompt_06_review_automation_code.txt`](../prompts/prompt_06_review_automation_code.txt)
 
 | Mode | Làm gì |
 |---|---|
@@ -181,7 +181,7 @@ Nói *"sửa luôn"* / *"dọn giùm"* → AI tự chuyển sang **FIX**.
 /run-and-fix-tests
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_17_run_and_fix_tests.txt`](prompts/prompt_17_run_and_fix_tests.txt)
+📋 Prompt mẫu: [`prompts/prompt_17_run_and_fix_tests.txt`](../prompts/prompt_17_run_and_fix_tests.txt)
 
 | Mode | Làm gì |
 |---|---|
@@ -206,10 +206,10 @@ Lỗi 🌐 Environment (mạng, môi trường sập, thiếu credential) → **
 
 | Tình huống | Command | Prompt mẫu | Ghi chú |
 |---|---|---|---|
-| **Đã có report**, nhiều test đỏ chưa rõ nguyên nhân | `/analyze-test-report` nhánh AUTOMATION | [`prompt_11`](prompts/prompt_11_analyze_test_report.txt) | Đọc report có sẵn, **không chạy lại** — 20 test đỏ thường chỉ 2–3 nguyên nhân |
-| Đã rõ là bug app | `/create-bug-report` | [`prompt_10`](prompts/prompt_10_create_bug_report.txt) | Tự lấy evidence từ `reports/`, tùy chọn đẩy Jira |
-| Đỏ vì locator gãy hàng loạt | `/heal-locators` | [`prompt_18`](prompts/prompt_18_heal_locators.txt) | Xem chặng 5 |
-| Lúc pass lúc fail | `/analyze-flaky-tests` | [`prompt_08`](prompts/prompt_08_analyze_flaky_tests.txt) | Xem chặng 5 |
+| **Đã có report**, nhiều test đỏ chưa rõ nguyên nhân | `/analyze-test-report` nhánh AUTOMATION | [`prompt_11`](../prompts/prompt_11_analyze_test_report.txt) | Đọc report có sẵn, **không chạy lại** — 20 test đỏ thường chỉ 2–3 nguyên nhân |
+| Đã rõ là bug app | `/create-bug-report` | [`prompt_10`](../prompts/prompt_10_create_bug_report.txt) | Tự lấy evidence từ `reports/`, tùy chọn đẩy Jira |
+| Đỏ vì locator gãy hàng loạt | `/heal-locators` | [`prompt_18`](../prompts/prompt_18_heal_locators.txt) | Xem chặng 5 |
+| Lúc pass lúc fail | `/analyze-flaky-tests` | [`prompt_08`](../prompts/prompt_08_analyze_flaky_tests.txt) | Xem chặng 5 |
 
 **Phân biệt `run-and-fix-tests` với `analyze-test-report`:**
 
@@ -227,9 +227,9 @@ Ba workflow, **ba tín hiệu khác nhau**. Chọn sai là chữa nhầm bệnh:
 
 | Tín hiệu bạn thấy | Command | Prompt mẫu | Mode |
 |---|---|---|---|
-| **UI vừa deploy bản mới**, locator gãy đồng loạt (chưa cần chạy test cũng biết) | `/heal-locators` | [`prompt_18`](prompts/prompt_18_heal_locators.txt) | SCAN → HEAL |
-| **Test lúc pass lúc fail**, code không đổi | `/analyze-flaky-tests` | [`prompt_08`](prompts/prompt_08_analyze_flaky_tests.txt) | ANALYZE → FIX |
-| **Requirements đổi** — TC đã đồng bộ bằng `/update-testcases-from-impact` | `/update-automation-from-impact` | [`prompt_19`](prompts/prompt_19_update_automation_from_impact.txt) | PLAN → APPLY |
+| **UI vừa deploy bản mới**, locator gãy đồng loạt (chưa cần chạy test cũng biết) | `/heal-locators` | [`prompt_18`](../prompts/prompt_18_heal_locators.txt) | SCAN → HEAL |
+| **Test lúc pass lúc fail**, code không đổi | `/analyze-flaky-tests` | [`prompt_08`](../prompts/prompt_08_analyze_flaky_tests.txt) | ANALYZE → FIX |
+| **Requirements đổi** — TC đã đồng bộ bằng `/update-testcases-from-impact` | `/update-automation-from-impact` | [`prompt_19`](../prompts/prompt_19_update_automation_from_impact.txt) | PLAN → APPLY |
 
 ### `/heal-locators` — UI đổi
 
@@ -266,7 +266,7 @@ Mắt xích **cuối** của chuỗi delta 3 tầng:
 /generate-traceability-matrix
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_13_generate_traceability_matrix.txt`](prompts/prompt_13_generate_traceability_matrix.txt)
+📋 Prompt mẫu: [`prompts/prompt_13_generate_traceability_matrix.txt`](../prompts/prompt_13_generate_traceability_matrix.txt)
 
 Cùng một command với flow manual, nhưng ở đây đọc **tầng 3**: REQ → TC → **script**.
 
@@ -296,22 +296,22 @@ Chỉ chạy khi dự án dùng Jira/Xray. Cần lấy requirements/ticket từ 
 
 | Chặng | Command | Prompt mẫu | Số lần chạy |
 |---|---|---|---|
-| 0 | `/generate-automation-framework` | [`prompt_03`](prompts/prompt_03_create_framework_playwright.txt) | **1 lần** / dự án (bỏ qua nếu đã có framework) |
-| 1 | `/generate-automation-from-testcases` | [`prompt_05`](prompts/prompt_05_convert_manual_to_automation.txt) | **N lần** = số module × nền tảng — tự chuyển tới 3 command dưới |
-| 1 · web | `/generate-automation-web` | [`prompt_04`](prompts/prompt_04_generate_script_playwright.txt) | Mode TC · mode FLOW khi chưa có TC |
-| 1 · mobile | `/generate-automation-mobile` | [`prompt_26`](prompts/prompt_26_generate_automation_mobile_flow.txt) | Mode TC · mode FLOW khi chưa có TC — Native / Flutter / Hybrid |
-| 1 · API | `/generate-automation-api` | [`prompt_31`](prompts/prompt_31_generate_automation_api.txt) | Từ file TC API — TC sinh bằng `/generate-testcases-api` ([`prompt_09`](prompts/prompt_09_generate_api_tests.txt)) |
-| 2 | `/review-automation-code` | [`prompt_06`](prompts/prompt_06_review_automation_code.txt) | 1 lần / bộ script (+ định kỳ) |
-| 3 | `/run-and-fix-tests` | [`prompt_17`](prompts/prompt_17_run_and_fix_tests.txt) | **Mỗi đợt regression / mỗi build** |
-| 4 | `/analyze-test-report` | [`prompt_11`](prompts/prompt_11_analyze_test_report.txt) | Khi nhiều test đỏ |
-| 4 | `/create-bug-report` | [`prompt_10`](prompts/prompt_10_create_bug_report.txt) | Mỗi bug app |
-| 5 | `/heal-locators` | [`prompt_18`](prompts/prompt_18_heal_locators.txt) | **Mỗi lần UI đổi** |
-| 5 | `/analyze-flaky-tests` | [`prompt_08`](prompts/prompt_08_analyze_flaky_tests.txt) | Khi test chập chờn |
-| 5 | `/update-automation-from-impact` | [`prompt_19`](prompts/prompt_19_update_automation_from_impact.txt) | Mỗi Impact Report — **sau** `/update-testcases-from-impact` |
-| 6 | `/generate-traceability-matrix` | [`prompt_13`](prompts/prompt_13_generate_traceability_matrix.txt) | Định kỳ / trước release |
+| 0 | `/generate-automation-framework` | [`prompt_03`](../prompts/prompt_03_create_framework_playwright.txt) | **1 lần** / dự án (bỏ qua nếu đã có framework) |
+| 1 | `/generate-automation-from-testcases` | [`prompt_05`](../prompts/prompt_05_convert_manual_to_automation.txt) | **N lần** = số module × nền tảng — tự chuyển tới 3 command dưới |
+| 1 · web | `/generate-automation-web` | [`prompt_04`](../prompts/prompt_04_generate_script_playwright.txt) | Mode TC · mode FLOW khi chưa có TC |
+| 1 · mobile | `/generate-automation-mobile` | [`prompt_26`](../prompts/prompt_26_generate_automation_mobile_flow.txt) | Mode TC · mode FLOW khi chưa có TC — Native / Flutter / Hybrid |
+| 1 · API | `/generate-automation-api` | [`prompt_31`](../prompts/prompt_31_generate_automation_api.txt) | Từ file TC API — TC sinh bằng `/generate-testcases-api` ([`prompt_09`](../prompts/prompt_09_generate_api_tests.txt)) |
+| 2 | `/review-automation-code` | [`prompt_06`](../prompts/prompt_06_review_automation_code.txt) | 1 lần / bộ script (+ định kỳ) |
+| 3 | `/run-and-fix-tests` | [`prompt_17`](../prompts/prompt_17_run_and_fix_tests.txt) | **Mỗi đợt regression / mỗi build** |
+| 4 | `/analyze-test-report` | [`prompt_11`](../prompts/prompt_11_analyze_test_report.txt) | Khi nhiều test đỏ |
+| 4 | `/create-bug-report` | [`prompt_10`](../prompts/prompt_10_create_bug_report.txt) | Mỗi bug app |
+| 5 | `/heal-locators` | [`prompt_18`](../prompts/prompt_18_heal_locators.txt) | **Mỗi lần UI đổi** |
+| 5 | `/analyze-flaky-tests` | [`prompt_08`](../prompts/prompt_08_analyze_flaky_tests.txt) | Khi test chập chờn |
+| 5 | `/update-automation-from-impact` | [`prompt_19`](../prompts/prompt_19_update_automation_from_impact.txt) | Mỗi Impact Report — **sau** `/update-testcases-from-impact` |
+| 6 | `/generate-traceability-matrix` | [`prompt_13`](../prompts/prompt_13_generate_traceability_matrix.txt) | Định kỳ / trước release |
 | 7 | `/import-test-results-xray` | — | Mỗi lần cần đồng bộ Xray |
-| ⊹ | `/generate-test-data` | [`prompt_07`](prompts/prompt_07_generate_test_data.txt) | Khi cần bộ data nhiều biến thể |
-| ⊹ | `/generate-api-mocks` | [`prompt_14`](prompts/prompt_14_generate_api_mocks.txt) | Khi cần test độc lập backend |
+| ⊹ | `/generate-test-data` | [`prompt_07`](../prompts/prompt_07_generate_test_data.txt) | Khi cần bộ data nhiều biến thể |
+| ⊹ | `/generate-api-mocks` | [`prompt_14`](../prompts/prompt_14_generate_api_mocks.txt) | Khi cần test độc lập backend |
 
 ---
 
@@ -333,10 +333,10 @@ Script chạy tốt nhưng RTM không map được về TC/REQ → chặng 6 x�
 | File | Nội dung |
 |---|---|
 | [`AI_FULL_FLOW_MANUAL.md`](AI_FULL_FLOW_MANUAL.md) | Flow 8 chặng Manual Testing — nguồn của bộ TC mà flow này tiêu thụ |
-| [`CLAUDE.md`](CLAUDE.md) | Quy tắc bắt buộc · Definition of Done · danh sách đầy đủ workflows |
-| [`.claude/rules/automation_rules.md`](.claude/rules/automation_rules.md) | POM · test data · naming · assertion |
-| [`.claude/rules/reporting_rules.md`](.claude/rules/reporting_rules.md) | Allure metadata · step Tiếng Việt · screenshot · thư mục `reports/` |
-| [`.claude/rules/locator_strategy.md`](.claude/rules/locator_strategy.md) | Thứ tự ưu tiên locator (mọi framework) |
-| [`.claude/rules/playwright_rules.md`](.claude/rules/playwright_rules.md) · [`selenium`](.claude/rules/selenium_rules.md) · [`appium`](.claude/rules/appium_rules.md) | Quy tắc riêng từng framework |
+| [`CLAUDE.md`](../../CLAUDE.md) | Quy tắc bắt buộc · Definition of Done · danh sách đầy đủ workflows |
+| [`.claude/rules/automation_rules.md`](../../.claude/rules/automation_rules.md) | POM · test data · naming · assertion |
+| [`.claude/rules/reporting_rules.md`](../../.claude/rules/reporting_rules.md) | Allure metadata · step Tiếng Việt · screenshot · thư mục `reports/` |
+| [`.claude/rules/locator_strategy.md`](../../.claude/rules/locator_strategy.md) | Thứ tự ưu tiên locator (mọi framework) |
+| [`.claude/rules/playwright_rules.md`](../../.claude/rules/playwright_rules.md) · [`selenium`](../../.claude/rules/selenium_rules.md) · [`appium`](../../.claude/rules/appium_rules.md) | Quy tắc riêng từng framework |
 | [`plans/automation/QUICK_START.md`](plans/automation/QUICK_START.md) | Luồng 6 bước bản copy-paste — dùng cho AI agent khác không có slash command của bộ này |
-| [`prompts/README.md`](prompts/README.md) | 35 prompt mẫu copy-paste, chia 7 nhóm tra cứu |
+| [`prompts/README.md`](../prompts/README.md) | 35 prompt mẫu copy-paste, chia 7 nhóm tra cứu |

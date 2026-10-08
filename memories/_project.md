@@ -14,14 +14,12 @@
 
 | Module | Prefix | Ticket | Trạng thái |
 |---|---|---|---|
-| `thu-tuc-607` | `TT607` | CARE3-2755 | Đã phân tích (86 REQ). Chờ trả lời 11 AMB 🔴, chưa sinh test case |
+| `thu-tuc-607` | `TT607` | CARE3-2755 | Đã phân tích (106 REQ, cập nhật 09-10). 20 AMB còn mở (🔴 10), chờ trả lời câu B-1→B-22 trong mục 7.1. Chưa sinh test case |
 
 ## Chưa chốt
 
-- Prefix TC ID
-- Môi trường test có dùng chung không
-- QA có quyền gọi API / truy vấn CSDL không
-- `.env` chưa điền URL và tài khoản
+- Đã chốt 09-10: prefix TC ID `CARE3_<MODULE>_TC_<3 số>` (VD `CARE3_TT607_TC_001`, người dùng chọn — không dùng XCARE) · môi trường `dev` **dùng chung** nhưng được Ký và gửi (→ chỉ dùng dữ liệu QA tự tạo, dọn sau khi chạy) · QA "có quyền" gọi API / truy vấn CSDL (chi tiết loại CSDL, chỉ đọc hay ghi: chưa hỏi). Ghi ở `docs/requirements/README.md`
+- `.env` (09-10): đã có URL, tài khoản 1, môi trường `dev`, sandbox = yes · ký số không cần điền (chỉ đơn vị tài khoản 1 ký được) · tài khoản 2 (đơn vị khác, chỉ để xem) đã điền 09-10 → `.env` đủ
 
 ## Vị trí trên luồng làm việc
 

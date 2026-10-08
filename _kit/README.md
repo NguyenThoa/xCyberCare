@@ -1,6 +1,6 @@
 # _kit/ — Kit reference (dùng chung, không thuộc riêng project)
 
-> **Mục đích:** Tách biệt **kiến thức áp dụng chung** (kit của Anh Tester + prompt templates) ra khỏi `docs/` (kiến thức riêng của xCyberCare).
+> **Mục đích:** Tách biệt **kiến thức áp dụng chung** (kit của CyberTech + prompt templates) ra khỏi `docs/` (kiến thức riêng của xCyberCare).
 
 Prefix `_` để folder này sort lên đầu trong file explorer, dễ tìm.
 
@@ -33,7 +33,7 @@ Nguyên tắc: nếu 1 file **áp dụng được cho mọi dự án QA khác** 
 
 ## Nguồn gốc
 
-- `guides/` — từ `claude-testing-skills-main.zip` (Anh Tester kit v2, 2026-09).
+- `guides/` — từ `claude-testing-skills-main.zip` (CyberTech kit v2, 2026-09).
 - `prompts/` — từ `claude-testing-skills-main.zip` (kit v2, có 32 template — nhiều hơn kit v1).
 
 ## Khi mang sang dự án mới

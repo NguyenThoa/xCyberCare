@@ -72,7 +72,7 @@ Khám phá **một lần** cho cả hệ thống, sau đó mỗi module chạy c
 /discover-system
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_00_discover_system.txt`](prompts/prompt_00_discover_system.txt)
+📋 Prompt mẫu: [`prompts/prompt_00_discover_system.txt`](../prompts/prompt_00_discover_system.txt)
 
 **Cần chuẩn bị:** URL web · file app hoặc package id + thiết bị (nếu có app) · URL/file tài liệu API — Swagger, Scalar, Postman, `.docx` (nếu có API) · tài khoản (càng nhiều role càng tốt) · tài liệu sẵn có nếu QA đưa được · môi trường có dùng chung không · QA có được gọi API trực tiếp không.
 
@@ -110,15 +110,15 @@ docs/requirements/_discovery/doc_inventory.md  ← chỉ khi có tài liệu
 /generate-requirements-from-website
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_01_generate_requirements.txt`](prompts/prompt_01_generate_requirements.txt)
+📋 Prompt mẫu: [`prompts/prompt_01_generate_requirements.txt`](../prompts/prompt_01_generate_requirements.txt)
 
 | Biến thể | Command | Prompt mẫu |
 |---|---|---|
-| Module là **app mobile** (hoặc thêm mặt app cho module web đã có) | `/generate-requirements-from-mobile` — mỗi nền tảng một lượt, ghi vào `<module>/mobile/`, chung dải REQ với web | [`prompt_30`](prompts/prompt_30_generate_requirements_from_mobile.txt) |
-| Module có **mặt API** — Swagger / Scalar / Postman / tài liệu API `.docx` | `/generate-requirements-from-api` — ghi vào `<module>/api/`, chung prefix và dải REQ với web | [`prompt_29`](prompts/prompt_29_generate_requirements_from_api.txt) |
-| Có ticket Jira thay vì UI | `/analyze-requirement-document` | [`prompt_20`](prompts/prompt_20_analyze_requirement_document.txt) |
-| Tài liệu đã có, ticket sửa đổi | `/update-requirements-from-ticket` | [`prompt_21`](prompts/prompt_21_update_requirements_from_ticket.txt) |
-| Tài liệu vừa đổi, **bộ TC đã có cần đồng bộ** | `/update-testcases-from-impact` | [`prompt_27`](prompts/prompt_27_update_testcases_from_impact.txt) |
+| Module là **app mobile** (hoặc thêm mặt app cho module web đã có) | `/generate-requirements-from-mobile` — mỗi nền tảng một lượt, ghi vào `<module>/mobile/`, chung dải REQ với web | [`prompt_30`](../prompts/prompt_30_generate_requirements_from_mobile.txt) |
+| Module có **mặt API** — Swagger / Scalar / Postman / tài liệu API `.docx` | `/generate-requirements-from-api` — ghi vào `<module>/api/`, chung prefix và dải REQ với web | [`prompt_29`](../prompts/prompt_29_generate_requirements_from_api.txt) |
+| Có ticket Jira thay vì UI | `/analyze-requirement-document` | [`prompt_20`](../prompts/prompt_20_analyze_requirement_document.txt) |
+| Tài liệu đã có, ticket sửa đổi | `/update-requirements-from-ticket` | [`prompt_21`](../prompts/prompt_21_update_requirements_from_ticket.txt) |
+| Tài liệu vừa đổi, **bộ TC đã có cần đồng bộ** | `/update-testcases-from-impact` | [`prompt_27`](../prompts/prompt_27_update_testcases_from_impact.txt) |
 
 **AI làm gì:** đọc bản đồ chặng 0 (khỏi dò đường) → mở từng form → **trigger từng validation lấy message nguyên văn** → đọc DOM bằng `browser_evaluate` → bắt network lấy validation server-side → chụp evidence full-page → sinh `REQ-<PREFIX>-NN`.
 
@@ -149,15 +149,15 @@ Cộng thêm: `README.md` cập nhật `Trạng thái recon` ⬜ → ✅.
 
 | Mode | Command | Prompt mẫu | Khi nào dùng |
 |---|---|---|---|
-| **FULL RBT** | `/generate-testcases-manual-rbt` | [`prompt_02_generate_test_cases.txt`](prompts/prompt_02_generate_test_cases.txt) | Module lớn · requirements còn mơ hồ · cần đánh giá risk · **bộ TC gốc của module** |
-| **QUICK** | `/generate-testcases-from-requirements` | [`prompt_22_generate_testcases_quick.txt`](prompts/prompt_22_generate_testcases_quick.txt) | Requirements đã rõ · scope 1 form / 1 tính năng · cần nhanh |
-| **CHECKLIST** | `/generate-checklist-test` | [`prompt_15_generate_checklist.txt`](prompts/prompt_15_generate_checklist.txt) | Rà tay nhanh: smoke · sau hotfix · trước release |
+| **FULL RBT** | `/generate-testcases-manual-rbt` | [`prompt_02_generate_test_cases.txt`](../prompts/prompt_02_generate_test_cases.txt) | Module lớn · requirements còn mơ hồ · cần đánh giá risk · **bộ TC gốc của module** |
+| **QUICK** | `/generate-testcases-from-requirements` | [`prompt_22_generate_testcases_quick.txt`](../prompts/prompt_22_generate_testcases_quick.txt) | Requirements đã rõ · scope 1 form / 1 tính năng · cần nhanh |
+| **CHECKLIST** | `/generate-checklist-test` | [`prompt_15_generate_checklist.txt`](../prompts/prompt_15_generate_checklist.txt) | Rà tay nhanh: smoke · sau hotfix · trước release |
 
 **Đầu ra tương ứng:** FULL RBT / QUICK → TC chi tiết có steps. CHECKLIST → danh sách tick, **không** có steps.
 
 **Theo nền tảng:**
 - **Web · Mobile** — cùng 3 mode trên. REQ dùng chung sinh **mỗi nền tảng một TC**, cùng `REQ ID`; TC mobile gắn tag `@Android` / `@iOS`
-- **API** — dùng `/generate-testcases-api` ([`prompt_09`](prompts/prompt_09_generate_api_tests.txt)): tự nhận nguồn URL hay file, kiểm chứng gọi thật, đủ 12 status code + OWASP, ghi vào `<module>/api/`
+- **API** — dùng `/generate-testcases-api` ([`prompt_09`](../prompts/prompt_09_generate_api_tests.txt)): tự nhận nguồn URL hay file, kiểm chứng gọi thật, đủ 12 status code + OWASP, ghi vào `<module>/api/`
 
 **Ranh giới:** cần **bộ TC lưu trữ / import Jira / giao cho automation** → QUICK hoặc FULL RBT. Cần **tick tay cho nhanh** → CHECKLIST.
 
@@ -185,7 +185,7 @@ docs/checklists/checklist_<loại>_<module>.md     ← nếu chạy mode CHECKLI
 /review-testcases
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_12_review_testcases.txt`](prompts/prompt_12_review_testcases.txt)
+📋 Prompt mẫu: [`prompts/prompt_12_review_testcases.txt`](../prompts/prompt_12_review_testcases.txt)
 
 | Mode | Làm gì |
 |---|---|
@@ -206,7 +206,7 @@ Nói *"sửa luôn"* / *"cải thiện giùm"* → AI tự chuyển sang **FIX**
 /execute-test-cases
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_16_execute_test_cases.txt`](prompts/prompt_16_execute_test_cases.txt)
+📋 Prompt mẫu: [`prompts/prompt_16_execute_test_cases.txt`](../prompts/prompt_16_execute_test_cases.txt)
 
 **AI làm gì:** mở browser thật qua Playwright MCP → chạy từng bước theo TC → đối chiếu Expected vs Actual → chấm **PASS / FAIL / BLOCKED / SKIPPED** → thu evidence.
 
@@ -233,10 +233,10 @@ Report gồm 6 mục: Tổng kết · Kết quả từng TC · Chi tiết FAIL �
 
 | Tình huống | Command | Prompt mẫu | Ghi chú |
 |---|---|---|---|
-| **Nhiều TC FAIL**, chưa rõ nguyên nhân | `/analyze-test-report` | [`prompt_11_analyze_test_report.txt`](prompts/prompt_11_analyze_test_report.txt) | **Chạy cái này trước** — 12 TC FAIL thường chỉ là 2 bug |
-| Đã rõ bug, cần báo cáo | `/create-bug-report` | [`prompt_10_create_bug_report.txt`](prompts/prompt_10_create_bug_report.txt) | Tự lấy evidence từ run vừa rồi, tuỳ chọn đẩy Jira |
-| FAIL vì **TC viết sai**, không phải lỗi hệ thống | `/review-testcases` mode FIX | [`prompt_12_review_testcases.txt`](prompts/prompt_12_review_testcases.txt) | Quay lại chặng 3 |
-| **Dev báo đã fix**, cần xác minh | `/retest-fixed-bugs` | [`prompt_23_retest_fixed_bugs.txt`](prompts/prompt_23_retest_fixed_bugs.txt) | Đóng vòng lặp bug — xem dưới. Hiện chỉ retest được bug **web**; bug mobile/API xác minh bằng cách chạy lại automation |
+| **Nhiều TC FAIL**, chưa rõ nguyên nhân | `/analyze-test-report` | [`prompt_11_analyze_test_report.txt`](../prompts/prompt_11_analyze_test_report.txt) | **Chạy cái này trước** — 12 TC FAIL thường chỉ là 2 bug |
+| Đã rõ bug, cần báo cáo | `/create-bug-report` | [`prompt_10_create_bug_report.txt`](../prompts/prompt_10_create_bug_report.txt) | Tự lấy evidence từ run vừa rồi, tuỳ chọn đẩy Jira |
+| FAIL vì **TC viết sai**, không phải lỗi hệ thống | `/review-testcases` mode FIX | [`prompt_12_review_testcases.txt`](../prompts/prompt_12_review_testcases.txt) | Quay lại chặng 3 |
+| **Dev báo đã fix**, cần xác minh | `/retest-fixed-bugs` | [`prompt_23_retest_fixed_bugs.txt`](../prompts/prompt_23_retest_fixed_bugs.txt) | Đóng vòng lặp bug — xem dưới. Hiện chỉ retest được bug **web**; bug mobile/API xác minh bằng cách chạy lại automation |
 
 **Đầu ra:**
 ```
@@ -276,7 +276,7 @@ TC FAIL → /create-bug-report → dev fix → /retest-fixed-bugs
 /generate-traceability-matrix
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_13_generate_traceability_matrix.txt`](prompts/prompt_13_generate_traceability_matrix.txt)
+📋 Prompt mẫu: [`prompts/prompt_13_generate_traceability_matrix.txt`](../prompts/prompt_13_generate_traceability_matrix.txt)
 
 **Ra 4 nhóm phát hiện:**
 
@@ -297,7 +297,7 @@ TC FAIL → /create-bug-report → dev fix → /retest-fixed-bugs
 /generate-test-summary-report
 ```
 
-📋 Prompt mẫu: [`prompts/prompt_24_generate_test_summary_report.txt`](prompts/prompt_24_generate_test_summary_report.txt)
+📋 Prompt mẫu: [`prompts/prompt_24_generate_test_summary_report.txt`](../prompts/prompt_24_generate_test_summary_report.txt)
 
 Gộp **mọi** kết quả của cả đợt — execution report nhiều module + bug đang mở + RTM — thành **một** tài liệu gửi PM/khách hàng, kết thúc bằng khuyến nghị **GO / GO có điều kiện / NO-GO** kèm căn cứ.
 
@@ -356,26 +356,26 @@ Cột **`TC cần xử lý`** trong Nhật ký thay đổi của tài liệu req
 
 | Chặng | Command | Prompt mẫu | Số lần chạy |
 |---|---|---|---|
-| 0 | `/discover-system` | [`prompt_00`](prompts/prompt_00_discover_system.txt) | **1 lần** / hệ thống (+ ADD/DELTA khi cần) |
-| 1 | `/generate-requirements-from-website` | [`prompt_01`](prompts/prompt_01_generate_requirements.txt) | **N lần** = số module |
-| 1" | `/generate-requirements-from-mobile` | [`prompt_30`](prompts/prompt_30_generate_requirements_from_mobile.txt) | **N lần** = số module có mặt app × số nền tảng |
-| 1' | `/generate-requirements-from-api` | [`prompt_29`](prompts/prompt_29_generate_requirements_from_api.txt) | **N lần** = số module có mặt API |
-| 2 | `/generate-testcases-manual-rbt` | [`prompt_02`](prompts/prompt_02_generate_test_cases.txt) | **N lần** = số module (web + mobile) |
-| 2" | `/generate-testcases-api` | [`prompt_09`](prompts/prompt_09_generate_api_tests.txt) | **N lần** = số module có mặt API |
-| 2' | `/generate-checklist-test` | [`prompt_15`](prompts/prompt_15_generate_checklist.txt) | Khi cần checklist tick tay |
-| 3 | `/review-testcases` | [`prompt_12`](prompts/prompt_12_review_testcases.txt) | 1 lần / bộ TC |
-| 4 | `/execute-test-cases` | [`prompt_16`](prompts/prompt_16_execute_test_cases.txt) | Mỗi đợt kiểm thử |
-| 5 | `/analyze-test-report` | [`prompt_11`](prompts/prompt_11_analyze_test_report.txt) | Khi nhiều TC FAIL |
-| 5 | `/create-bug-report` | [`prompt_10`](prompts/prompt_10_create_bug_report.txt) | Mỗi bug cần báo |
-| 5 | `/retest-fixed-bugs` | [`prompt_23`](prompts/prompt_23_retest_fixed_bugs.txt) | **Mỗi lần dev báo đã fix** |
-| 6 | `/generate-traceability-matrix` | [`prompt_13`](prompts/prompt_13_generate_traceability_matrix.txt) | Định kỳ / trước release |
-| 7 | `/generate-test-summary-report` | [`prompt_24`](prompts/prompt_24_generate_test_summary_report.txt) | **Mỗi mốc release / sprint** |
-| ↻ | `/update-requirements-from-ticket` | [`prompt_21`](prompts/prompt_21_update_requirements_from_ticket.txt) | Mỗi ticket sửa yêu cầu |
-| ↻ | `/update-testcases-from-impact` | [`prompt_27`](prompts/prompt_27_update_testcases_from_impact.txt) | **Mỗi Impact Report** — ngay sau command trên |
-| ⊹ | `/generate-master-test-plan` | [`prompt_25`](prompts/prompt_25_generate_master_test_plan.txt) | 1 lần / đợt — khi cần kế hoạch chính thức |
-| ⊹ | `/generate-user-guide` | [`prompt_28`](prompts/prompt_28_generate_user_guide.txt) | Khi bàn giao — tài liệu cho **người dùng cuối**, không phải cho QA |
+| 0 | `/discover-system` | [`prompt_00`](../prompts/prompt_00_discover_system.txt) | **1 lần** / hệ thống (+ ADD/DELTA khi cần) |
+| 1 | `/generate-requirements-from-website` | [`prompt_01`](../prompts/prompt_01_generate_requirements.txt) | **N lần** = số module |
+| 1" | `/generate-requirements-from-mobile` | [`prompt_30`](../prompts/prompt_30_generate_requirements_from_mobile.txt) | **N lần** = số module có mặt app × số nền tảng |
+| 1' | `/generate-requirements-from-api` | [`prompt_29`](../prompts/prompt_29_generate_requirements_from_api.txt) | **N lần** = số module có mặt API |
+| 2 | `/generate-testcases-manual-rbt` | [`prompt_02`](../prompts/prompt_02_generate_test_cases.txt) | **N lần** = số module (web + mobile) |
+| 2" | `/generate-testcases-api` | [`prompt_09`](../prompts/prompt_09_generate_api_tests.txt) | **N lần** = số module có mặt API |
+| 2' | `/generate-checklist-test` | [`prompt_15`](../prompts/prompt_15_generate_checklist.txt) | Khi cần checklist tick tay |
+| 3 | `/review-testcases` | [`prompt_12`](../prompts/prompt_12_review_testcases.txt) | 1 lần / bộ TC |
+| 4 | `/execute-test-cases` | [`prompt_16`](../prompts/prompt_16_execute_test_cases.txt) | Mỗi đợt kiểm thử |
+| 5 | `/analyze-test-report` | [`prompt_11`](../prompts/prompt_11_analyze_test_report.txt) | Khi nhiều TC FAIL |
+| 5 | `/create-bug-report` | [`prompt_10`](../prompts/prompt_10_create_bug_report.txt) | Mỗi bug cần báo |
+| 5 | `/retest-fixed-bugs` | [`prompt_23`](../prompts/prompt_23_retest_fixed_bugs.txt) | **Mỗi lần dev báo đã fix** |
+| 6 | `/generate-traceability-matrix` | [`prompt_13`](../prompts/prompt_13_generate_traceability_matrix.txt) | Định kỳ / trước release |
+| 7 | `/generate-test-summary-report` | [`prompt_24`](../prompts/prompt_24_generate_test_summary_report.txt) | **Mỗi mốc release / sprint** |
+| ↻ | `/update-requirements-from-ticket` | [`prompt_21`](../prompts/prompt_21_update_requirements_from_ticket.txt) | Mỗi ticket sửa yêu cầu |
+| ↻ | `/update-testcases-from-impact` | [`prompt_27`](../prompts/prompt_27_update_testcases_from_impact.txt) | **Mỗi Impact Report** — ngay sau command trên |
+| ⊹ | `/generate-master-test-plan` | [`prompt_25`](../prompts/prompt_25_generate_master_test_plan.txt) | 1 lần / đợt — khi cần kế hoạch chính thức |
+| ⊹ | `/generate-user-guide` | [`prompt_28`](../prompts/prompt_28_generate_user_guide.txt) | Khi bàn giao — tài liệu cho **người dùng cuối**, không phải cho QA |
 
-**Biến thể của chặng 1–2** (không nằm trên luồng chính): `/analyze-requirement-document` → [`prompt_20`](prompts/prompt_20_analyze_requirement_document.txt) · `/generate-testcases-from-requirements` → [`prompt_22`](prompts/prompt_22_generate_testcases_quick.txt).
+**Biến thể của chặng 1–2** (không nằm trên luồng chính): `/analyze-requirement-document` → [`prompt_20`](../prompts/prompt_20_analyze_requirement_document.txt) · `/generate-testcases-from-requirements` → [`prompt_22`](../prompts/prompt_22_generate_testcases_quick.txt).
 
 ---
 
@@ -397,8 +397,8 @@ Xem lại cảnh báo ở chặng 6.
 | File | Nội dung |
 |---|---|
 | [`AI_FULL_FLOW_AUTOMATION.md`](AI_FULL_FLOW_AUTOMATION.md) | Flow 8 chặng Automation Testing — nối tiếp từ bộ TC của chặng 2–3 |
-| [`CLAUDE.md`](CLAUDE.md) | Quy tắc bắt buộc · cấu trúc `docs/` · danh sách đầy đủ workflows |
+| [`CLAUDE.md`](../../CLAUDE.md) | Quy tắc bắt buộc · cấu trúc `docs/` · danh sách đầy đủ workflows |
 | [`README.md`](README.md) | Tổng quan bộ kit · cài đặt |
 | [`SETUP_CLAUDE.md`](SETUP_CLAUDE.md) | Cài Claude Code + Playwright MCP |
-| [`prompts/README.md`](prompts/README.md) | 35 prompt mẫu copy-paste, chia 7 nhóm tra cứu |
+| [`prompts/README.md`](../prompts/README.md) | 35 prompt mẫu copy-paste, chia 7 nhóm tra cứu |
 | [`plans/manual/QUICK_START.md`](plans/manual/QUICK_START.md) | Luồng 6 bước AI-RBT bản copy-paste — dùng cho AI agent khác (Codex · Antigravity · Kiro · Cursor) không có slash command của bộ này |

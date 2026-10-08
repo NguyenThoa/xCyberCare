@@ -25,7 +25,9 @@ Quyết định người dùng chốt trong chat 06-10-2026:
 - Phụ lục thành viên HGĐ: Xem tờ khai phải đúng thông tin NTG; sửa/sao chép sau khi lưu/ký vẫn hiện đúng dữ liệu đã lưu; NTG không khai TV HGĐ mà tích → Ký và gửi báo lỗi
 - KHÔNG test thủ tục 612
 
-**Còn treo:** 11 AMB 🔴 (13, 17, 19, 20, 32, 33, 34, 35, 36, 37, 42) chờ người dùng trả lời; chưa hỏi: môi trường dùng chung? QA có quyền gọi API/CSDL? Prefix TC ID chưa chốt. Chưa có test case, chưa có framework automation. Người dùng sẽ tự ra lệnh bước sinh TC (`/generate-testcases-manual-rbt` hoặc `/generate-testcases-from-requirements`).
+**09-10-2026 (đã gộp, theo yêu cầu người dùng):** mục 7.1 tổ chức lại thành 3 bảng — ✅ 22 AMB đã trả lời · ⏳ 18 trả lời một phần · ❔ 2 chưa trả lời (35, 42) — nguồn `File 08-10` / `Chat 09-10`, giữ nguyên văn; câu hỏi lượt 2 B-1…B-22 có dòng `Trả lời:` để người dùng điền. Thêm REQ-TT607-87→106 (mục 4.7); mã kế tiếp REQ-107/AMB-43/RISK-10. Bản sao lưu trước khi gộp ở scratchpad phiên (không trong repo). Chốt mới đáng nhớ: Chỉnh sửa chỉ áp hồ sơ Lưu nháp; Thu hồi → Lưu nháp; Từ chối ký → chỉ Sao chép; giới hạn 5MB tính cả tờ khai; màn hình có thể không có Kỳ kê khai (người dùng đang kiểm).
+
+**Còn treo:** 10 AMB 🔴 (13, 17, 19, 20, 32, 34, 35, 36, 37, 42) — chi tiết ở câu B-x trong mục 7.1. Đã chốt 09-10: prefix TC `CARE3_TT607_TC_001`, môi trường dev dùng chung, QA có quyền API/CSDL (xem [[project-test-env-safety]]). Chưa có test case, chưa có framework automation. Người dùng sẽ tự ra lệnh bước sinh TC (`/generate-testcases-manual-rbt` hoặc `/generate-testcases-from-requirements`).
 
 **Why:** Giữ mạch phân tích giữa các phiên, tránh hỏi lại câu đã trả lời.
 **How to apply:** Đọc file phân tích trước khi làm tiếp module này; kiểm tra Confluence có phiên bản mới hơn 14 không. Xem [[project-test-env-safety]], [[feedback-ask-dont-decide]].
