@@ -14,7 +14,7 @@
 
 | Module | Prefix | Ticket | Trạng thái |
 |---|---|---|---|
-| `thu-tuc-607` | `TT607` | CARE3-2755 | Đã phân tích (106 REQ, cập nhật 09-10). 20 AMB còn mở (🔴 10), chờ trả lời câu B-1→B-22 trong mục 7.1. Chưa sinh test case |
+| `thu-tuc-607` | `TT607` | CARE3-2755 | Đã phân tích (106 REQ, cập nhật 09-10). 2 AMB còn mở (17 🔴 chờ BA, 36 🟡), 40 đã trả lời (gộp lần 4 ngày 09-10); còn câu B-31 ý 3, B-32, B-33→38, B-40, B-41 trong mục 7.1. Chưa sinh test case |
 
 ## Chưa chốt
 

@@ -9,6 +9,7 @@ metadata:
 ---
 
 - Người dùng sẽ cấp tài khoản test; agent đã tạo `.env` (rỗng) và `.env.example` ở gốc repo với các biến XCARE_BASE_URL, XCARE_USER1_*/XCARE_USER2_* (2 đơn vị khác nhau để test phân quyền), XCARE_SIGN_*, XCARE_BHXH_SANDBOX_CONFIRMED (mặc định `no`). `.gitignore` mới tạo, chặn `.env`. 09-10-2026: người dùng đã điền URL, tài khoản 1, môi trường `dev`, XCARE_BHXH_SANDBOX_CONFIRMED=yes; tài khoản 2 và ký số còn trống. Chỉ đơn vị của tài khoản 1 ký được; không cần điền XCARE_SIGN_*. Có tài khoản đơn vị khác chỉ để đăng nhập XEM (XCARE_USER2_* đã điền 09-10, đơn vị khác tài khoản 1), dùng cho ca phân quyền, không ký bằng nó. Môi trường `dev` **dùng chung** với người khác nhưng được phép Ký và gửi (người dùng xác nhận 09-10) → chỉ Ký và gửi trên NTG/hồ sơ do QA tạo, không đụng dữ liệu người khác.
+- 09-10-2026: CSDL Oracle (Navicat) **chỉ đọc** — không dọn được dữ liệu test bằng SQL; hồ sơ Trình ký / Gửi thành công QA tạo sẽ còn lại trên `dev` (chờ người dùng chốt, câu B-32). Gói dịch vụ hết hạn 13-10-2026 ([[reference-xcare-dev-site]]).
 - Không bấm "Ký và gửi" khi XCARE_BHXH_SANDBOX_CONFIRMED khác `yes` — hồ sơ gửi cổng BHXH không thu hồi được.
 - Khi ký số / gửi BHXH bị lỗi: ghi lại **số hồ sơ** vào báo cáo để người dùng tự kiểm tra (chỉ dẫn của người dùng 06-10-2026).
 

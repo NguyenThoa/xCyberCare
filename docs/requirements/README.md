@@ -10,7 +10,7 @@
 | Hệ thống | xCare — thủ tục Bảo hiểm xã hội · Jira project `CARE3` · Confluence space `CARE3` |
 | Prefix TC ID | ✅ `CARE3_<MODULE>_TC_<3 số>` — VD `CARE3_TT607_TC_001` (người dùng chốt 09-10). Dùng cố định cho mọi module, KHÔNG đổi giữa chừng |
 | Môi trường dùng chung? | ✅ **Có** — môi trường `dev` dùng chung nhưng **được phép Ký và gửi** (Chat 09-10). Bật quy tắc: chỉ dùng dữ liệu do QA tạo (tên truy vết được), dọn dữ liệu test sau khi chạy, không thao tác phá huỷ trên dữ liệu người khác |
-| Năng lực kiểm thử của QA (gọi API · truy vấn CSDL · xem nhật ký) | ✅ "có quyền" gọi API / truy vấn CSDL (Chat 09-10) · ❔ chi tiết (CSDL loại gì, chỉ đọc hay ghi, xem nhật ký hoạt động) chưa hỏi |
+| Năng lực kiểm thử của QA (gọi API · truy vấn CSDL · xem nhật ký) | ✅ CSDL **Oracle**, truy cập bằng Navicat Premium, **chỉ đọc** (không sửa / xóa gì) · API: chỉ bắt request trên trình duyệt (không có Swagger / Postman) · **không xem được** log hệ thống (Chat 09-10). Trang chủ xCare có khung "Nhật ký hoạt động" — chưa rõ có tính là nhật ký không (B-41) |
 | URL · tài khoản test | Lưu trong `.env` (đã `.gitignore`) — **không** ghi vào `docs/` |
 
 ## 1. Bảng danh mục module
@@ -61,4 +61,5 @@ docs/requirements/
 | 06-10-2026 | Khởi tạo danh mục. Thêm module `thu-tuc-607` (prefix `TT607`) từ ticket CARE3-2755 |
 | 09-10-2026 | `thu-tuc-607`: thêm REQ-TT607-87 → 106 từ câu trả lời AMB; AMB treo 31 → 20 (🔴 11 → 10, đóng AMB-TT607-33) |
 | 09-10-2026 | Thuộc tính dự án: môi trường `dev` dùng chung nhưng được Ký và gửi · QA có quyền gọi API / truy vấn CSDL |
+| 09-10-2026 | Chốt năng lực kiểm thử (B-22): Oracle chỉ đọc qua Navicat · API qua request trình duyệt · không xem log |
 | 09-10-2026 | Chốt prefix TC ID `CARE3_<MODULE>_TC_<3 số>` (VD `CARE3_TT607_TC_001`) |
